@@ -10,6 +10,20 @@
 
 <!-- new html below -->
 
+<table id="list">
+  <thead>
+
+  </thead>
+  <tbody>
+    <% brews.forEach(function(b) { %>
+      <tr>
+        <td><%= b.name %></td>
+        <td><%= b.brewery %></td>
+        <td><%= b.reviews %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
   
 
