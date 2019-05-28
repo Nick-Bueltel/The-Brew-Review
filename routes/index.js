@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var brewsCtrl = require('../controllers/brews');
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'The Brew Review' });
-});
+router.get('/', brewsCtrl.index);
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(

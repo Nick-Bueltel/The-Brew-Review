@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
 
     <title><%= title %></title>
     <link type="text/css" rel="stylesheet" href="/The-Brew-Review/css/style.css">
@@ -15,14 +16,13 @@
 
   </thead>
   <tbody>
-    <% brews.forEach(function(b) { %>
-      <tr>
-        <td><%= b.name %></td>
-        <td><%= b.brewery %></td>
-        <td><%= b.reviews %></td>
-      </tr>
-      <% }); %>
-    </tbody>
+      <% brews.forEach(function(m) { %>
+        <tr>
+          <td><%= m.name %></td>
+          <td><%= m.brewery %></td>
+        </tr>
+        <% }); %>
+      </tbody>
   </table>
 
   
