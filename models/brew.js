@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema; 
 
-var ratingsSchema = new mongoose.Schema({
+var ratingsSchema = new Schema({
     user: String,
     review: String, 
     rating: {type:Number, min: 0, max: 5 },
@@ -8,11 +9,11 @@ var ratingsSchema = new mongoose.Schema({
 })
 
 
-var brewSchema = new mongoose.Schema({
+var brewSchema = new Schema({
     name: String,
     ratings: [ratingsSchema],
     brewery: String, 
-    inProduction: Boolean,
+    inProduction: String,
     
 
 

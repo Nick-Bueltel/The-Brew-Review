@@ -1,33 +1,34 @@
-var Brews = require('../models/brew');
+const Brew = require('../models/brew');
 
 module.exports = {
   index,
   show,
-  new: newMovie,
-  create
+  new: newBrew,
+  create,
+
 };
 
 function index(req, res) {
-  Brews.find({}, function(err, brews) {
+  Brew.find({}, function(err, brews) {
     res.render('/index', { title: 'All Brews', brews });
   });
 }
 
 function show(req, res) {
-  Brews.findById(req.params.id)
-  .populate('brewery').exec(function(err, brews) {
-    // Performer.find({}).where('_id').nin(movie.cast)
-    Performer.find({_id: {$nin: brews.cast}})
-    .exec(function(err, brewery) {
-      console.log(brewery);
-      res.render('/show', {
-        title: 'Brew Detail', brews, brewery
-      });
-    });
-  });
+  Brew.findById(req.params.id)
+//   .populate('brewery').exec(function(err, brews) {
+//     // Performer.find({}).where('_id').nin(movie.cast)
+//     brewery.find({_id: {$nin: brews.cast}})
+//     .exec(function(err, brewery) {
+//       console.log(brewery);
+//       res.render('/show', {
+//         title: 'Brew Detail', brews, brewery
+//       });
+//     });
+//   });
 }
 
-function newMovie(req, res) {
+function newBrew(req, res) {
   res.render('/new', { title: 'Add Brew Review' });
 }
 
@@ -37,10 +38,12 @@ function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
-  var brews = new Brews(req.body);
+  var brews = new Brew(req.body);
   brews.save(function(err) {
     if (err) return res.redirect('/new');
     // res.redirect('/movies');
     res.redirect(`/${brews._id}`);
   });
 }
+
+
