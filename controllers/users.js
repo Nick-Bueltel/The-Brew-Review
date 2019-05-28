@@ -1,7 +1,12 @@
 const User = require('../models/user');
+const passport = require('passport');
+
 
 module.exports = {
   index,
+  oAuthLogin,
+  callBack,
+  
 
 
 
@@ -24,4 +29,30 @@ function index(req, res, next) {
     });
   });
 }
+
+function oAuthLogin(){
+// Google OAuth login route
+passport.authenticate(
+  'google',
+  { scope: ['profile', 'email'] ,
+    successRedirect : '/oauth2callback'
+}
+);
+  
+}
+
+function callBack(){
+// Google OAuth callback route
+passport.authenticate(
+  'google',
+  {
+    successRedirect : '/',
+    failureRedirect : '/error'
+  }
+);
+}
+
+
+
+
 

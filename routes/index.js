@@ -2,31 +2,21 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var brewsCtrl = require('../controllers/brews');
-
+var userCtrl = require('../controllers/users');
 
 /* GET home page. */
 router.get('/', brewsCtrl.index);
+router.get('/new', brewsCtrl.new);
+router.get('/:id', brewsCtrl.show);
+router.post('/create', brewsCtrl.create);
 
-// Google OAuth login route
-router.get('/auth/google', passport.authenticate(
-  'google',
-  { scope: ['profile', 'email'] }
-));
+router.get('/', userCtrl.index);
+router.get('/oauth2callback', userCtrl.callBack);
+router.get('/auth/google', userCtrl.oAuthLogin);
 
-// Google OAuth callback route
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect : '/',
-    failureRedirect : '/'
-  }
-));
 
-// OAuth logout route
-router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
+
+
 
 
 

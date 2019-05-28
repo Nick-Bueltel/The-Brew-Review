@@ -4,29 +4,24 @@
     
 
     <title><%= title %></title>
-    <link type="text/css" rel="stylesheet" href="/The-Brew-Review/css/style.css">
+  
   </head>
   <body>
       <%- include('./partials/header') %>
 
 <!-- new html below -->
 
-<table id="list">
-  <thead>
+<a href="/new">new Brew</a>
 
-  </thead>
-  <tbody>
-      <% brews.forEach(function(m) { %>
-        <tr>
-          <td><%= m.name %></td>
-          <td><%= m.brewery %></td>
-        </tr>
-        <% }); %>
-      </tbody>
-  </table>
+<% brews.forEach(function(b) { %>
 
+    <p>Name: <%= b.name %></p>
+    <p>Brewery: <%= b.brewery %></p>
+    <p>Ratings: <%= b.ratings.review %></p>
+
+  <% }); %>
   
-
+<p> TEST</p>
 
 
 

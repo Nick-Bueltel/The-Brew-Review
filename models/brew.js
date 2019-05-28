@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema; 
 
-var ratingsSchema = new Schema({
-    user: String,
-    review: String, 
-    rating: {type:Number, min: 0, max: 5 },
-    
-})
 
+var ratingsSchema = new Schema({
+  user: String,
+  review: String, 
+  rating: {type:Number, min: 0, max: 5 },
+  
+})
 
 var brewSchema = new Schema({
     name: String,
@@ -22,6 +22,4 @@ var brewSchema = new Schema({
   });
 
   module.exports = mongoose.model('Brew', brewSchema);
-  module.exports = mongoose.model('Ratings', ratingsSchema);
-
 

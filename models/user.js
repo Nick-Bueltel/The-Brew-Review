@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
-require('../config/db');
-var userSchema = new mongoose.Schema({
+var Schema = mongoose.Schema; 
+
+
+var userSchema = new Schema({
     name: String,
     email: String,
     avatar: String,
