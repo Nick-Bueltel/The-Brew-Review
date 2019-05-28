@@ -3,13 +3,17 @@ var mongoose = require('mongoose');
 var ratingsSchema = new mongoose.Schema({
     user: String,
     review: String, 
-    rating: {type:Number, min: 0, max: 5 }
+    rating: {type:Number, min: 0, max: 5 },
+    
 })
 
 
 var brewSchema = new mongoose.Schema({
     name: String,
     ratings: [ratingsSchema],
+    brewery: String, 
+    inProduction: Boolean,
+    
 
 
   }, {
