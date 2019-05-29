@@ -9,6 +9,9 @@ module.exports = {
   delBrew,
   newReview, 
   createReview,
+  editReview,
+  edit,
+
 
 
 
@@ -75,4 +78,17 @@ function createReview(req, res){
   })
     
   }
+function editReview(req, res){
+  Brew.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, brew){
+    brew.save(function(err){
+      if(err) return res.redirect('/');
+      res.redirect('/');
+    })
+  })
+}
 
+function edit(req, res){
+  Brew.findById(req.params.id, function(err, brew){
+    res.render('edit', {brew})
+  })
+}

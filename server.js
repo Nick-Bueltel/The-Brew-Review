@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport')
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -22,6 +21,7 @@ require('./config/passport');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
+
 
 app.use(logger('dev'));
 app.use(express.json());

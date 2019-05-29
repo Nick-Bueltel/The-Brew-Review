@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="/css/style.css" rel="stylesheet" 
+
+    <title>Document</title>
+</head>
+<body>
+
+        <%- include('./partials/header') %>
+  
+
+    <form action="/<%= brew._id%>?_method=PUT" method="post">
+        <p>Name Of Beer</p>
+        <input type="text" name="name" value="<%= brew.name %>"> </input>
+    <p>Brewery Name</p>    
+    <input type="text" name="brewery" value="<%= brew.brewery %>"></input>
+    <select type="boolean" name="inProduction" value="<%= brew.inProduction %>">
+        <option value="true">Yes</option>
+        <option value="false">no</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+    
+</body>
+</html>

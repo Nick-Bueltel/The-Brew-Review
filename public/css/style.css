@@ -1,5 +1,6 @@
 body{
     background-color: #FFFAE2;
+    display: flexbox; 
     
 }
 
@@ -14,7 +15,7 @@ h1{
 }
 
 p{
-    text-align: center; 
+    padding-left: 5vmin;
 }
 
 #reviewsDivs {
@@ -68,12 +69,8 @@ h3{
     text-align: center; 
 }
 
+
 button{
     background-color: #525B76;
-    color: red; 
-}
-
-a{
-    text-align: center; 
-    color: #ECA400;
+    
 }
