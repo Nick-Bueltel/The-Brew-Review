@@ -10,10 +10,9 @@ router.get('/', brewsCtrl.index);
 router.get('/new', brewsCtrl.new);
 router.get('/:id', brewsCtrl.show);
 router.post('/create', brewsCtrl.create);
-router.get('/', userCtrl.index);
-router.get('/oauth2callback', userCtrl.callBack);
-router.get('/auth/google', userCtrl.oAuthLogin);
-
+router.delete('/:id', brewsCtrl.delBrew);
+router.get('/:id/newreview', brewsCtrl.newReview);
+router.post('/:id/createreview', brewsCtrl.createReview);
 
 
 

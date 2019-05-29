@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    
 </head>
 <body>
     <%- include('./partials/header') %>
-
     <h1><%= name %></h1>
-    <p>Brewery: <%= brewery%></p>
-    <p>in Production: <%= inProduction %></p>
-    <div > <% ratings.forEach(function(r) { %>
-        <p> review -  </p>
-        <p><%= r.user %></p>
-        <p><%= r.review %></p>
-        <p><%= r.rating %></p>
+    <h3>Brewery: <%= brewery%></h3>
+    <h3>in Production: <%= inProduction %></h3>
+    <% var totalArray = []; %>
+    <% if (ratings.length > 0){ratings.forEach(function(t) { %>
+        <% totalArray.push(t.rating); %>
+        <% console.log(totalArray); %>
         <% }); %>
+        
+        <% avg = totalArray.reduce((a,b) => a + b)/totalArray.length; %>
+        <h3>Average Rating : <%= parseInt(avg) %></h3>
+        <% } %> 
+    <a id="addreview" href="/<%= _id %>/newreview">write a review</a>
+
     
+    <div id="reviewsDivs" > <% ratings.forEach(function(r) { %>
+        
+        <p class="review">User: <%= r.user %></p>
+        <p class="review">Review: <%= r.review %></p>
+        <p class="review">Rating: <%= r.rating %></p>
+        <br></br>
+
+        
+        
+        <% }); %>
     </div>
- 
+
     
 </body>
 </html>

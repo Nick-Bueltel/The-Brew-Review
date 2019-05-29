@@ -1,0 +1,67 @@
+body{
+    background-color: #FFFAE2;
+    
+}
+
+nav{
+    background-color: #525B76;
+    
+
+
+}
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center; 
+}
+
+#reviewsDivs {
+    
+    background-color: #5E5D5C; 
+    border-color: #525B76;
+    color: #FFFAE2;
+    border-width: 3px;
+    padding : 5vmin; 
+    margin-bottom : 5px;
+    margin-left : 5vmin; 
+    margin-right : 5vmin; 
+    margin-top: 5vmin; 
+}
+
+.review{
+    color: #FFFAE2;
+    border-color: #525B76;
+    border-width: 2px;
+}
+
+#googlelogin{
+    padding-left: 3vmin;
+}
+
+#homelink{
+    padding-left:3vmin; 
+}
+
+#addreview{
+    
+    color: #ECA400;
+    padding-left: 5vmin;
+    background-color: #525B76;
+    font-size: 20px; 
+
+}
+
+h3{
+    text-align: center; 
+    font-size: 25px; 
+}
+
+#addbrew{
+    padding-left: 3vmin; 
+}
+
+.mainpagea{
+    text-align: center; 
+}

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var ratingsSchema = new Schema({
   user: String,
   review: String, 
-  rating: {type:Number, min: 0, max: 5 },
+  rating: Number,
   
 })
 
@@ -13,7 +13,7 @@ var brewSchema = new Schema({
     name: String,
     ratings: [ratingsSchema] ,
     brewery: String, 
-    inProduction: String,
+    inProduction: Boolean,
     
 
 

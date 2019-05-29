@@ -6,6 +6,11 @@ module.exports = {
   show,
   new: newBrew,
   create,
+  delBrew,
+  newReview, 
+  createReview,
+
+
 
 };
 
@@ -41,4 +46,33 @@ function create(req, res) {
   });
 }
 
+function delBrew(req, res) {
+  Brew.findByIdAndDelete(req.params.id).then(brew => {
+    console.log(brew);
+    brew.save; 
+    res.redirect('/')
+
+  })
+  
+
+
+}
+
+function newReview(req, res){
+  Brew.findById(req.params.id).then(brew => {
+    console.log(brew);
+    res.render('newreview', brew);
+  })
+
+}
+
+function createReview(req, res){
+  Brew.findById(req.params.id, function(err, brews){
+    brews.ratings.push(req.body);
+    brews.save(function(err){
+      res.redirect(`/${brews._id}`);
+    })
+  })
+    
+  }
 

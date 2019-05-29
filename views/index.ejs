@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     
 
     <title><%= title %></title>
@@ -11,19 +14,26 @@
 
 <!-- new html below -->
 
-<a href="/new">new Brew</a>
+<a class="mainpagea" href="/new">new Brew</a>
 
 <% brews.forEach(function(b) { %>
 
     <p>Name: <%= b.name %></p>
     <p>Brewery: <%= b.brewery %></p>
-    <p>Ratings: <%= parseInt(b.ratings / b.ratings.lengths) %></p>
+    
+    <a class="mainpagea" href="/<%=b._id%>">details</a>
+    
+    <form action="/<%= b._id %>?_method=DELETE" method="POST" class="secondary-content">
+      <button type="submit" class="btn-small red-text">X</button>
+    </form>
 
-    <a href="/<%=b._id%>">details</a>
+
+
+
 
   <% }); %>
   
-<p> TEST</p>
+<p></p>
 
 
 
