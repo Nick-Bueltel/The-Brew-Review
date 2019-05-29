@@ -60,8 +60,20 @@ h3{
 
 #addbrew{
     padding-left: 3vmin; 
+    padding-right: 3vmin; 
+    margin-left: 3vmin;
 }
 
 .mainpagea{
     text-align: center; 
+}
+
+button{
+    background-color: #525B76;
+    color: red; 
+}
+
+a{
+    text-align: center; 
+    color: #ECA400;
 }
