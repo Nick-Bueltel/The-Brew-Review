@@ -19,7 +19,6 @@ module.exports = {
 
 function index(req, res) {
   Brew.find({}, function(err, brews) {
-    console.log(brews)
     res.render('index', { title: 'The Brew Review', brews });
   });
 }

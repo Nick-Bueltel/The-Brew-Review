@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy({
         }
       } else {
         
-        var newUser = new User({
+        let newUser = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id
