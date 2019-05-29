@@ -17,7 +17,9 @@
 
     <p>Name: <%= b.name %></p>
     <p>Brewery: <%= b.brewery %></p>
-    <p>Ratings: <%= b.ratings.review %></p>
+    <p>Ratings: <%= parseInt(b.ratings / b.ratings.lengths) %></p>
+
+    <a href="/<%=b._id%>">details</a>
 
   <% }); %>
   

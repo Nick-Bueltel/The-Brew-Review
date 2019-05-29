@@ -11,7 +11,7 @@ var ratingsSchema = new Schema({
 
 var brewSchema = new Schema({
     name: String,
-    ratings: [ratingsSchema],
+    ratings: [ratingsSchema] ,
     brewery: String, 
     inProduction: String,
     
