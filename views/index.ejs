@@ -12,7 +12,7 @@
   <body>
       <%- include('./partials/header') %>
 
-<!-- new html below -->
+
 
 <a  href="/new" class="waves-effect waves-light btn">new Brew</a>
 
@@ -27,7 +27,11 @@
       <button type="submit" class="waves-effect waves-light btn">edit</button>
     </form>
     <form action="/<%= b._id %>?_method=DELETE" method="POST" >
+
+      <%= if(User.googleId === "110436131649577948715"){ %>
       <button type="submit" class="waves-effect waves-light btn">X</button>
+          <%= }); %>
+        
     </form>
 
 
