@@ -21,10 +21,11 @@
 <a  href="/new" class="waves-effect waves-light btn orange darken-3">new Brew</a>
 <% }; %>
 
+
 <% brews.forEach(function(b) { %>
 
-    <p>Name: <%= b.name %></p>
-    <p>Brewery: <%= b.brewery %></p>
+    <p style="font-size: 14px" style="color: black">Name: <%= b.name %></p>
+    <p style="font-size: 14px" style="color: black">Brewery: <%= b.brewery %></p>
     
     <a class="waves-effect waves-light btn orange darken-4" href="/<%=b._id%>">details</a>
     
