@@ -14,14 +14,14 @@
     <nav>
     <a id="homelink" href="/">home</a>
     <% if (!user){ %>
-    <a id="googlelogin" href="/auth/google">Login with Google </a>
+    <a id="googlelogin" class="secondary-content" href="/auth/google">Login with Google </a>
     <% }; %>
     <% if(user){ %>
-    <a id="googlelogout" href="/logout" >Logout</a>
+    <a id="googlelogout" href="/logout" class="secondary-content" style="padding-right: 3vmin" >Logout</a>
       <% }; %>
-    <h3 class="brand-logo center " id="logo">The Brew Review</h3>
+    <a href="/"class="center"style="font-size:20px" id="logo">The Brew Review</p>
 <div>
-  
+
 </div>
       
   </nav>
