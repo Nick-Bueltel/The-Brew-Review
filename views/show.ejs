@@ -34,7 +34,11 @@
             <p class="review">User: <%= r.user %></p>
             <p class="review">Review: <%= r.review %></p>
             <p class="review">Rating: <%= r.rating %></p>
-            
+            <% if(user && user.name === r.user){ %>
+                <form action="<%= brew._id %>/<%= r._id %>/delete" method="post">
+                <button type="submit" class="btn red darken-4 secondary-content">X</button>
+            </form>
+                <% }; %>
     
         
         <br></br>

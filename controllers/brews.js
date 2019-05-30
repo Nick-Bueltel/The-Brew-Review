@@ -2,6 +2,7 @@ const Brew = require('../models/brew');
 require('mongoose');
 const utils = require('../utils/utils')
 
+
 module.exports = {
   index,
   show,
@@ -11,7 +12,7 @@ module.exports = {
   newReview, 
   createReview,
   editReview,
-  //delReview,
+  delReview,
   edit,
   
   
@@ -30,7 +31,8 @@ function index(req, res) {
 function show(req, res) {
   Brew.findById(req.params.id).then(brew => {
     console.log(brew);
-    res.render('show', {brew, user: req.user});
+    res.render('show', {brew, user: req.user, ratings: brew.ratings} );
+   
   })
 
 }
@@ -55,37 +57,29 @@ function create(req, res) {
 function delBrew(req, res) {
   Brew.findByIdAndDelete(req.params.id).then(brew => {
     console.log(brew);
-    brew.save; 
+    brew.save(); 
     res.redirect('/')
 
   })
 
 }
 
-// function delReview(req, res, next) {
-//  Brew.ratings.findByIdAndDelete(req.params.ratings.id).then(rev => {
-//    console.log(rev);
-//    rev.save;
-//    res.redirect(`/${brews.id}`)
-//  })
-// }
+
+function delReview(req, res, next) {
+  console.log(req.params);
+Brew.findById(req.params.id).then(result => {
+  console.log(result)
+  result.ratings.pull(req.params.id2)
+  result.save()
+  res.redirect(`/${result.id}`);
+}).catch(error => res.send(error))
+}
+
   
-
-
-  // function delReview(req, res, next){
-  //   Brew.findById(req.params.id).then(brews => {
-  //     console.log(brews.ratings); 
-  //     delete brews.ratings._id;
-  //     ratings._id.save;
-  //     res.redirect(`${brews._id}`)
-  //   });
-  // }
-
-
 function newReview(req, res){
   Brew.findById(req.params.id).then(brew => {
     console.log(brew);
-    res.render('newreview', {brew, user: req.user});
+    res.render('newreview', {brew, user: req.user, ratings: brew.ratings});
   })
 
 }
@@ -110,6 +104,6 @@ function editReview(req, res){
 
 function edit(req, res){
   Brew.findById(req.params.id, function(err, brew){
-    res.render('edit', {brew, user: req.body})
+    res.render('edit', {brew, user: req.body, ratings: brew.ratings})
   })
 }

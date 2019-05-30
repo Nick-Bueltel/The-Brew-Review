@@ -23,5 +23,5 @@ var brewSchema = new Schema({
     timestamps: true
   });
 
-  module.exports = mongoose.model('Brew', brewSchema);
+  module.exports = mongoose.model('Brew', brewSchema, );
 
