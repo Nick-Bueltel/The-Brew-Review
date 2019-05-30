@@ -11,8 +11,8 @@ module.exports = {
   newReview, 
   createReview,
   editReview,
-  delReview,
-  edit
+  //delReview,
+  edit,
   
   
   
@@ -62,15 +62,24 @@ function delBrew(req, res) {
 
 }
 
+// function delReview(req, res, next) {
+//  Brew.ratings.findByIdAndDelete(req.params.ratings.id).then(rev => {
+//    console.log(rev);
+//    rev.save;
+//    res.redirect(`/${brews.id}`)
+//  })
+// }
   
-  function delReview(req, res){
-    Brew.findById(req.params.id).then(brews => {
-      console.log(brews.ratings); 
-      delete brews.ratings._id;
-      brews.ratings._id.save;
-      res.redirect(`${brews._id}`)
-    });
-  }
+
+
+  // function delReview(req, res, next){
+  //   Brew.findById(req.params.id).then(brews => {
+  //     console.log(brews.ratings); 
+  //     delete brews.ratings._id;
+  //     ratings._id.save;
+  //     res.redirect(`${brews._id}`)
+  //   });
+  // }
 
 
 function newReview(req, res){

@@ -37,7 +37,7 @@ router.get('/auth/google', passport.authenticate(
     router.post('/:id/createreview', brewsCtrl.createReview);
     router.get('/:id/edit', brewsCtrl.edit);
     router.put('/:id', brewsCtrl.editReview);
-    router.delete('/:id', brewsCtrl.delReview);
+    // router.get('/:id/delete', brewsCtrl.delReview);
    
    
     module.exports = router;
