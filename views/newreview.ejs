@@ -13,9 +13,9 @@
 <%- include('./partials/header') %>
 
 
-<form action="/<%= _id %>/createreview" method="post">
+<form action="/<%= brew._id %>/createreview" method="post">
   
-<input type="text" name="user" required placeholder="Enter your name"></input>
+<input type="text"name="user" value="<%= user.name %>" >  </input>
 <textarea name="review"  cols="30" rows="50" required placeholder="enter your review"></textarea>
           
     <div class="input-field col s12">

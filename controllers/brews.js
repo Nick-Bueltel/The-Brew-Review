@@ -1,5 +1,6 @@
 const Brew = require('../models/brew');
 require('mongoose');
+const utils = require('../utils/utils')
 
 module.exports = {
   index,
@@ -12,23 +13,24 @@ module.exports = {
   editReview,
   delReview,
   edit
-
-
-
-
-
+  
+  
+  
+  
+  
 };
 
 function index(req, res) {
   Brew.find({}, function(err, brews) {
-    res.render('index', { title: 'The Brew Review', brews });
+    res.render('index', { title: 'The Brew Review', brews, user: req.user, nick: utils.nick});
   });
+  
 }
 
 function show(req, res) {
   Brew.findById(req.params.id).then(brew => {
     console.log(brew);
-    res.render('show', brew);
+    res.render('show', {brew, user: req.user});
   })
 
 }
@@ -74,7 +76,7 @@ function delBrew(req, res) {
 function newReview(req, res){
   Brew.findById(req.params.id).then(brew => {
     console.log(brew);
-    res.render('newreview', brew);
+    res.render('newreview', {brew, user: req.user});
   })
 
 }

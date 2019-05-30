@@ -48,7 +48,6 @@ p{
 #addreview{
     
     color: #ECA400;
-    padding-left: 5vmin;
     background-color: #525B76;
     font-size: 20px; 
 
@@ -84,4 +83,8 @@ textarea{
 #googlelogout{
     padding-left: 3vmin;
     
+}
+
+h2{
+    text-align: center; 
 }

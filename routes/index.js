@@ -24,7 +24,7 @@ router.get('/auth/google', passport.authenticate(
     // OAuth logout route
     router.get('/logout', function(req, res){
       req.logout();
-      res.render('loggedout');
+      res.redirect('/');
     });
     
     
