@@ -12,6 +12,7 @@
     <%- include('./partials/header') %>
     <h1><%= name %></h1>
     <h3>Brewery: <%= brewery%></h3>
+    <h3>Type: <%= type%></h3>
     <h3>in Production: <%= inProduction %></h3>
     <% var totalArray = []; %>
     <% if (ratings.length > 0){ratings.forEach(function(t) { %>
@@ -22,14 +23,14 @@
         <% avg = totalArray.reduce((a,b) => a + b)/totalArray.length; %>
         <h3>Average Rating : <%= parseInt(avg) %></h3>
         <% } %> 
-    <a id="addreview" href="/<%= _id %>/newreview">write a review</a>
-
-    
-    <div id="reviewsDivs" > <% ratings.forEach(function(r) { %>
+        <a id="addreview" href="/<%= _id %>/newreview">write a review</a>
         
-        <p class="review">User: <%= r.user %></p>
-        <p class="review">Review: <%= r.review %></p>
-        <p class="review">Rating: <%= r.rating %></p>
+        
+        <div id="reviewsDivs" > <% ratings.forEach(function(r) { %>
+            
+            <p class="review">User: <%= r.user %></p>
+            <p class="review">Review: <%= r.review %></p>
+            <p class="review">Rating: <%= r.rating %></p>
         <br></br>
 
         

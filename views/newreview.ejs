@@ -12,21 +12,14 @@
 <body>
 <%- include('./partials/header') %>
 
+
 <form action="/<%= _id %>/createreview" method="post">
-    <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <textarea id="textarea1" class="materialize-textarea" name="review">enter review here</textarea>
-                
-                </div>
-              </div>
-            </form>
-          </div>
-    
+  
+<input type="text" name="user" required placeholder="Enter your name"></input>
+<textarea name="review"  cols="30" rows="50" required placeholder="enter your review"></textarea>
           
     <div class="input-field col s12">
-            <select class="browser-default" name="rating">
+            <select class="browser-default" name="rating" required>
               <option value="" disabled selected>rate it 1-5</option>
               <option value="1">1</option>
               <option value="2">2</option>

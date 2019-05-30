@@ -10,7 +10,9 @@ module.exports = {
   newReview, 
   createReview,
   editReview,
-  edit,
+  delReview,
+  edit
+
 
 
 
@@ -55,10 +57,19 @@ function delBrew(req, res) {
     res.redirect('/')
 
   })
-  
-
 
 }
+
+  
+  function delReview(req, res){
+    Brew.findById(req.params.id).then(brews => {
+      console.log(brews.ratings); 
+      delete brews.ratings._id;
+      brews.ratings._id.save;
+      res.redirect(`${brews._id}`)
+    });
+  }
+
 
 function newReview(req, res){
   Brew.findById(req.params.id).then(brew => {

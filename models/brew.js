@@ -7,6 +7,7 @@ var ratingsSchema = new Schema({
   review: String, 
   rating: Number,
   
+  
 })
 
 var brewSchema = new Schema({
@@ -14,6 +15,7 @@ var brewSchema = new Schema({
     ratings: [ratingsSchema] ,
     brewery: String, 
     inProduction: Boolean,
+    type: String, 
     
 
 

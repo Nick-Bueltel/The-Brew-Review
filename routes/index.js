@@ -24,7 +24,7 @@ router.get('/auth/google', passport.authenticate(
     // OAuth logout route
     router.get('/logout', function(req, res){
       req.logout();
-      res.redirect('/');
+      res.render('loggedout');
     });
     
     
@@ -37,6 +37,7 @@ router.get('/auth/google', passport.authenticate(
     router.post('/:id/createreview', brewsCtrl.createReview);
     router.get('/:id/edit', brewsCtrl.edit);
     router.put('/:id', brewsCtrl.editReview);
+    router.delete('/:id', brewsCtrl.delReview);
    
    
     module.exports = router;

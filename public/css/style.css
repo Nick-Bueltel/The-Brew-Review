@@ -74,3 +74,14 @@ button{
     background-color: #525B76;
     
 }
+
+textarea{
+    height: 30vmin; 
+    background-color: #5E5D5C;
+    color: #FFFAE2;
+}
+
+#googlelogout{
+    padding-left: 3vmin;
+    
+}
