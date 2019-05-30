@@ -36,7 +36,7 @@ function show(req, res) {
 }
 
 function newBrew(req, res) {
-  res.render('new', { title: 'Add Brew Review' });
+  res.render('new', { title: 'Add Brew Review', user: req.user });
 }
 
 function create(req, res) {

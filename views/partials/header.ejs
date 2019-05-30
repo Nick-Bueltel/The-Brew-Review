@@ -13,8 +13,16 @@
   <div id="navbar">
     <nav>
     <a id="homelink" href="/">home</a>
+    <% if (!user){ %>
     <a id="googlelogin" href="/auth/google">Login with Google </a>
+    <% }; %>
+    <% if(user){ %>
     <a id="googlelogout" href="/logout" >Logout</a>
+      <% }; %>
+    <h3 class="brand-logo center " id="logo">The Brew Review</h3>
+<div>
+  
+</div>
       
   </nav>
   </div>

@@ -12,12 +12,12 @@
   <body>
       <%- include('./partials/header') %>
 
-      <h2>The Brew Review</h2>
+     
 
 
 
 <% if (user){ %>
-<a  href="/new" class="waves-effect waves-light btn">new Brew</a>
+<a  href="/new" class="waves-effect waves-light btn orange darken-3">new Brew</a>
 <% }; %>
 
 <% brews.forEach(function(b) { %>
@@ -29,10 +29,10 @@
     
     <% if (user && user.googleId === nick) { %>
     <form action="/<%= b._id %>/edit" >
-      <button type="submit" class="waves-effect waves-light btn">edit</button>
+      <button type="submit" class="waves-effect waves-light btn blue-grey darken-3">edit</button>
     </form>
     <form action="/<%= b._id %>?_method=DELETE" method="POST" >
-      <button type="submit" class="waves-effect waves-light btn">X</button>
+      <button type="submit" class="waves-effect waves-light btn red darken-3">X</button>
 
     <% } %>
         
