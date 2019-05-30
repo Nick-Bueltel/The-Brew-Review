@@ -14,14 +14,14 @@
 
     <form action="/create" method="post">
         <p>Name Of Beer</p>
-        <input type="text" name="name"> </input>
+        <input type="text" name="name" required> </input>
     <p>Brewery Name</p>    
-    <input type="text" name="brewery"></input>
+    <input type="text" name="brewery" required></input>
     <p>Beer Type</p>
-    <input type="text" name="type"></input
+    <input type="text" name="type" required></input
     <div class="input-field col s12">
            
-        <select class="browser-default" name="inProduction">
+        <select class="browser-default" name="inProduction" required>
               <option value="" disabled selected>In Production?</option>
               <option value="true">Yes</option>
               <option value="false">no</option>
